@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/weather.css">
+    <title>Velo Rapido</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cardContainer">
+        <div class="card">
+          <p class="city" style="font-size: 26px;"></p>
+          <p class="weather" style="position: absolute; top: 20vh;"></p>
+          
+          <div class="designs">
+            <div class="cloud front">
+              <span class="left-front"></span>
+              <span class="right-front"></span>
+            </div>
+              <span class="sun sunshine"></span>
+              <span class="sun"></span>
+              <div class="cloud back">
+                <span class="left-back"></span>
+                <span class="right-back"></span>
+              </div>
+          </div>
+
+
+          <p class="temp">°</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+      <!-- Main Cards-->
+    <div class="cards">
+      <div class="cardBlock">
+        <h2>Book <br> now</h2>
+      </div>
+
+      <div class="cardBlock">
+        <h2>Schedule <br> booking</h2>
+      </div>
+
+      <div class="cardBlock">
+        <h2>Rent <br> bike</h2>
+      </div>
+    </div>
+
+    <script src = "./scripts/navbar.js"></script>
+    <script src="./scripts/home.js"></script>
+</body>
+</html>

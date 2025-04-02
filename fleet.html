@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/fleet.css">
+    <title>Our Fleet - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="fleet-container">
+        <div class="fleet-header">
+            <h1 class="text-4xl font-bold gradient-text">Our Premium Fleet</h1>
+            <p class="text-gray-300 mt-2">Explore our collection of high-quality bikes and scooters for your next adventure</p>
+        </div>
+
+        <div class="fleet-filters">
+            <div class="filter-group">
+                <label for="category-filter" class="filter-label">Category</label>
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="scooter">Scooters</option>
+                    <option value="electric_bike">Electric Bikes</option>
+                    <option value="city_bike">City Bikes</option>
+                    <option value="mountain_bike">Mountain Bikes</option>
+                    <option value="road_bike">Road Bikes</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="price-filter" class="filter-label">Price Range</label>
+                <select id="price-filter" class="filter-select">
+                    <option value="all">All Prices</option>
+                    <option value="low">$0 - $10/hour</option>
+                    <option value="medium">$10 - $15/hour</option>
+                    <option value="high">$15+/hour</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sort-by" class="filter-label">Sort By</label>
+                <select id="sort-by" class="filter-select">
+                    <option value="name">Name</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="price_high">Price: High to Low</option>
+                    <option value="newest">Newest First</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="fleet-grid" id="fleetGrid">
+            <!-- Fleet items will be loaded dynamically via JavaScript -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading fleet...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="py-8 px-4 footer-gradient">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Velo Rapido</h3>
+                    <p>Premium bike and scooter rentals for the modern explorer.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Contact</h3>
+                    <p>123 Bike Lane, Cityville</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@velorapido.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="mr-4">Facebook</a>
+                        <a href="#" class="mr-4">Instagram</a>
+                        <a href="#" class="mr-4">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8 border-t border-gold pt-6">
+                <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/fleet.js"></script>
+</body>
+</html>

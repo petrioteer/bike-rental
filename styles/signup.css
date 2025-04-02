@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --gold: #FFD700;
+  --dark-gold: #FFC000;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Update the signup container to prevent content from going under navbar */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px; /* Increased padding to prevent content from going under navbar */
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.signup-form-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  margin: 0 auto; /* Center the container */
+  background-color: rgba(17, 17, 17, 0.7);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Lower than navbar z-index */
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--gold);
+}
+
+.progress-bar {
+  height: 4px;
+  width: 100%;
+  background-color: #ff3b30;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.terms-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.terms-container input[type="checkbox"] {
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+  accent-color: var(--gold);
+}
+
+.terms-container label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.terms-container a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.terms-container a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--gold);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: var(--dark-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.signup-button:active {
+  transform: translateY(0);
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-link a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.login-link a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .signup-form-container {
+    padding: 2rem 1.5rem;
+  }
+}

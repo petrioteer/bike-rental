@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/book.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <title>Book Now - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1 class="text-4xl font-bold gradient-text">Book Your Ride</h1>
+            <p class="text-gray-300 mt-2">Select your pickup and dropoff locations, choose a vehicle, and enjoy the ride!</p>
+        </div>
+
+        <div class="booking-content">
+            <div class="booking-form">
+                <form id="bookingForm" action="./booking/process_booking.php" method="POST">
+                    <div class="form-section">
+                        <h3 class="text-xl font-semibold mb-4 text-yellow-400">Route Information</h3>
+                        
+                        <div class="mb-4">
+                            <label for="from" class="block text-sm font-medium text-gray-300 mb-1">Pickup Location</label>
+                            <input type="text" id="from" name="from" class="form-input" placeholder="Enter pickup location" required>
+                            <input type="hidden" id="from_lat" name="from_lat">
+                            <input type="hidden" id="from_lng" name="from_lng">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="to" class="block text-sm font-medium text-gray-300 mb-1">Dropoff Location</label>
+                            <input type="text" id="to" name="to" class="form-input" placeholder="Enter dropoff location" required>
+                            <input type="hidden" id="to_lat" name="to_lat">
+                            <input type="hidden" id="to_lng" name="to_lng">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="text-xl font-semibold mb-4 text-yellow-400">Vehicle Selection</h3>
+                        
+                        <div class="mb-4">
+                            <label for="vehicle_type" class="block text-sm font-medium text-gray-300 mb-1">Vehicle Type</label>
+                            <select id="vehicle_type" name="vehicle_type" class="form-select" required>
+                                <option value="">Select a vehicle type</option>
+                                <option value="scooter">Scooter</option>
+                                <option value="electric_bike">Electric Bike</option>
+                                <option value="city_bike">City Bike</option>
+                                <option value="mountain_bike">Mountain Bike</option>
+                                <option value="road_bike">Road Bike</option>
+                            </select>
+                        </div>
+                        
+                        <div id="vehicle_options" class="mb-4 hidden">
+                            <label for="vehicle_id" class="block text-sm font-medium text-gray-300 mb-1">Select Vehicle</label>
+                            <select id="vehicle_id" name="vehicle_id" class="form-select" required>
+                                <!-- Options will be populated via JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="text-xl font-semibold mb-4 text-yellow-400">Booking Details</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-gray-300 mb-1">Date</label>
+                                <input type="date" id="date" name="date" class="form-input" required>
+                            </div>
+                            
+                            <div>
+                                <label for="time" class="block text-sm font-medium text-gray-300 mb-1">Time</label>
+                                <input type="time" id="time" name="time" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label for="duration" class="block text-sm font-medium text-gray-300 mb-1">Duration (hours)</label>
+                            <input type="number" id="duration" name="duration" min="1" max="24" value="1" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="text-xl font-semibold mb-4 text-yellow-400">Additional Services</h3>
+                        
+                        <div class="flex flex-col space-y-3">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="helmet" name="extras[]" value="helmet" class="form-checkbox">
+                                <label for="helmet" class="ml-2 text-gray-300">Helmet (+$5)</label>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="lock" name="extras[]" value="lock" class="form-checkbox">
+                                <label for="lock" class="ml-2 text-gray-300">Security Lock (+$3)</label>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="basket" name="extras[]" value="basket" class="form-checkbox">
+                                <label for="basket" class="ml-2 text-gray-300">Basket (+$2)</label>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="insurance" name="extras[]" value="insurance" class="form-checkbox">
+                                <label for="insurance" class="ml-2 text-gray-300">Insurance (+$10)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-summary">
+                        <h3 class="text-xl font-semibold mb-4 text-yellow-400">Booking Summary</h3>
+                        <div id="summary" class="p-4 bg-gray-900 rounded-lg">
+                            <p>Please select your route and vehicle to see the summary.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button type="submit" class="booking-btn">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-instructions">
+                    <p>Click on the map to set pickup and dropoff locations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 footer-gradient">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Velo Rapido</h3>
+                <p>Premium bike and scooter rentals for the modern explorer.</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Contact</h3>
+                <p>123 Bike Lane, Cityville</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@velorapido.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="mr-4">Facebook</a>
+                    <a href="#" class="mr-4">Instagram</a>
+                    <a href="#" class="mr-4">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 border-t border-gold pt-6">
+            <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/map.js"></script>
+    <script src="./scripts/booking.js"></script>
+</body>
+</html>

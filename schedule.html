@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/schedule.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>My Schedule - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="schedule-container">
+        <div class="schedule-header">
+            <h1 class="text-4xl font-bold gradient-text">My Schedule</h1>
+            <p class="text-gray-300 mt-2">View and manage your upcoming bookings</p>
+        </div>
+
+        <div class="schedule-tabs">
+            <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+            <button class="tab-btn" data-tab="past">Past Bookings</button>
+            <button class="tab-btn" data-tab="maintenance">Maintenance</button>
+        </div>
+
+        <div class="schedule-content">
+            <div id="upcoming" class="tab-content active">
+                <div class="booking-cards">
+                    <!-- Booking cards will be loaded dynamically via JavaScript -->
+                    <div class="booking-card">
+                        <div class="booking-status confirmed">Confirmed</div>
+                        <div class="booking-header">
+                            <h3 class="booking-title">Trek FX 3 City Bike</h3>
+                            <p class="booking-date">June 15, 2023 • 10:00 AM - 2:00 PM</p>
+                        </div>
+                        <div class="booking-details">
+                            <div class="booking-info">
+                                <div class="info-item">
+                                    <span class="info-label">Pickup</span>
+                                    <span class="info-value">Central Park, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Dropoff</span>
+                                    <span class="info-value">Brooklyn Bridge, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration</span>
+                                    <span class="info-value">4 hours</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total</span>
+                                    <span class="info-value">$32.00</span>
+                                </div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="action-btn view-btn">View Details</button>
+                                <button class="action-btn cancel-btn">Cancel Booking</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-card">
+                        <div class="booking-status pending">Pending</div>
+                        <div class="booking-header">
+                            <h3 class="booking-title">Specialized Turbo Vado E-Bike</h3>
+                            <p class="booking-date">June 20, 2023 • 9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div class="booking-details">
+                            <div class="booking-info">
+                                <div class="info-item">
+                                    <span class="info-label">Pickup</span>
+                                    <span class="info-value">Battery Park, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Dropoff</span>
+                                    <span class="info-value">Battery Park, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration</span>
+                                    <span class="info-value">8 hours</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total</span>
+                                    <span class="info-value">$100.00</span>
+                                </div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="action-btn view-btn">View Details</button>
+                                <button class="action-btn cancel-btn">Cancel Booking</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="no-bookings hidden">
+                    <div class="empty-state">
+                        <img src="./assets/icons/calendar-empty.png" alt="No Bookings">
+                        <h3>No Upcoming Bookings</h3>
+                        <p>You don't have any upcoming bookings. Ready for your next adventure?</p>
+                        <a href="book.html" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="past" class="tab-content">
+                <div class="booking-cards">
+                    <div class="booking-card">
+                        <div class="booking-status completed">Completed</div>
+                        <div class="booking-header">
+                            <h3 class="booking-title">Vespa Primavera Scooter</h3>
+                            <p class="booking-date">May 28, 2023 • 11:00 AM - 3:00 PM</p>
+                        </div>
+                        <div class="booking-details">
+                            <div class="booking-info">
+                                <div class="info-item">
+                                    <span class="info-label">Pickup</span>
+                                    <span class="info-value">Times Square, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Dropoff</span>
+                                    <span class="info-value">Times Square, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration</span>
+                                    <span class="info-value">4 hours</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total</span>
+                                    <span class="info-value">$60.00</span>
+                                </div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="action-btn view-btn">View Details</button>
+                                <button class="action-btn review-btn">Write Review</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-card">
+                        <div class="booking-status cancelled">Cancelled</div>
+                        <div class="booking-header">
+                            <h3 class="booking-title">Trek Marlin 7 Mountain Bike</h3>
+                            <p class="booking-date">May 15, 2023 • 9:00 AM - 1:00 PM</p>
+                        </div>
+                        <div class="booking-details">
+                            <div class="booking-info">
+                                <div class="info-item">
+                                    <span class="info-label">Pickup</span>
+                                    <span class="info-value">Central Park, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Dropoff</span>
+                                    <span class="info-value">Central Park, New York</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration</span>
+                                    <span class="info-value">4 hours</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total</span>
+                                    <span class="info-value">$40.00</span>
+                                </div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="action-btn view-btn">View Details</button>
+                                <button class="action-btn book-again-btn">Book Again</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="no-bookings hidden">
+                    <div class="empty-state">
+                        <img src="./assets/icons/history-empty.png" alt="No Past Bookings">
+                        <h3>No Past Bookings</h3>
+                        <p>You don't have any past bookings. Ready to start your journey?</p>
+                        <a href="book.html" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="maintenance" class="tab-content">
+                <div class="booking-cards">
+                    <div class="booking-card">
+                        <div class="booking-status scheduled">Scheduled</div>
+                        <div class="booking-header">
+                            <h3 class="booking-title">Standard Service</h3>
+                            <p class="booking-date">June 25, 2023 • 10:00 AM</p>
+                        </div>
+                        <div class="booking-details">
+                            <div class="booking-info">
+                                <div class="info-item">
+                                    <span class="info-label">Bike Type</span>
+                                    <span class="info-value">Mountain Bike</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Service Type</span>
+                                    <span class="info-value">Standard Service</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Location</span>
+                                    <span class="info-value">Main Workshop</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total</span>
+                                    <span class="info-value">$79.99</span>
+                                </div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="action-btn view-btn">View Details</button>
+                                <button class="action-btn reschedule-btn">Reschedule</button>
+                                <button class="action-btn cancel-btn">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="no-bookings hidden">
+                    <div class="empty-state">
+                        <img src="./assets/icons/maintenance-empty.png" alt="No Maintenance">
+                        <h3>No Maintenance Appointments</h3>
+                        <p>You don't have any scheduled maintenance appointments.</p>
+                        <a href="maintenance.html" class="book-now-btn">Schedule Maintenance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="py-8 px-4 footer-gradient">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Velo Rapido</h3>
+                    <p>Premium bike and scooter rentals for the modern explorer.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Contact</h3>
+                    <p>123 Bike Lane, Cityville</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@velorapido.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-4 text-gold font-bold">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="mr-4">Facebook</a>
+                        <a href="#" class="mr-4">Instagram</a>
+                        <a href="#" class="mr-4">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8 border-t border-gold pt-6">
+                <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/schedule.js"></script>
+</body>
+</html>

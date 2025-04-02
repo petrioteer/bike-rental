@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --gold: #FFD700;
+  --dark-gold: #FFC000;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 70px; /* Account for navbar */
+  padding-bottom: 2rem;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  background-color: rgba(17, 17, 17, 0.7);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--gold);
+}
+
+.progress-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.progress-bar-red {
+  height: 4px;
+  width: 100%;
+  background-color: #ff3b30;
+  border-radius: 2px;
+}
+
+.progress-bar-green {
+  height: 4px;
+  width: 100%;
+  background-color: #34c759;
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--gold);
+}
+
+.forgot-password {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.forgot-password:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--gold);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--dark-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.signup-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signup-link a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.signup-link a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-form-container {
+    padding: 2rem 1.5rem;
+  }
+}

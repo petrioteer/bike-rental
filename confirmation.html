@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/confirmation.css">
+    <title>Booking Confirmation - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <div class="navbar">
+        <div class="menu-toggler" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-overlay" id="navOverlay">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="book.html">Book Now</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="login.html">Login/Signup</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="confirmation-container">
+        <div class="confirmation-card">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            
+            <h1 class="confirmation-title">Booking Confirmed!</h1>
+            <p class="confirmation-message">Your booking has been successfully processed. We've sent a confirmation email with all the details.</p>
+            
+            <div class="booking-details">
+                <div class="detail-item">
+                    <span class="detail-label">Booking ID</span>
+                    <span class="detail-value">VR-2023-06-15-8742</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Vehicle</span>
+                    <span class="detail-value">Trek FX 3 City Bike</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Date & Time</span>
+                    <span class="detail-value">June 15, 2023 • 10:00 AM - 2:00 PM</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Pickup Location</span>
+                    <span class="detail-value">Central Park, New York</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label">Total Paid</span>
+                    <span class="detail-value">$43.20</span>
+                </div>
+            </div>
+            
+            <div class="qr-code">
+                <img src="./assets/qr-code-sample.png" alt="Booking QR Code">
+                <p class="qr-info">Show this QR code at pickup</p>
+            </div>
+            
+            <div class="next-steps">
+                <h2 class="steps-title">What's Next?</h2>
+                <ol class="steps-list">
+                    <li>Arrive at the pickup location 10 minutes before your scheduled time</li>
+                    <li>Present your ID and the booking QR code to our staff</li>
+                    <li>Complete a quick safety check and you're ready to go!</li>
+                </ol>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="schedule.html" class="view-bookings-btn">View My Bookings</a>
+                <a href="index.html" class="home-btn">Return to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-8 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl mb-4">Velo Rapido</h3>
+                <p>Premium bike and scooter rentals for the modern explorer.</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Contact</h3>
+                <p>123 Bike Lane, Cityville</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@velorapido.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="mr-4">Facebook</a>
+                    <a href="#" class="mr-4">Instagram</a>
+                    <a href="#" class="mr-4">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/navbar.js"></script>
+</body>
+</html>

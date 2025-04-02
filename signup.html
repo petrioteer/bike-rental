@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/signup.css">
+    <title>Sign Up - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="signup-container">
+        <div class="signup-form-container">
+            <h2>Create Account</h2>
+            
+            <div class="progress-bar"></div>
+            
+            <form action="#" method="post">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                </div>
+                
+                <div class="terms-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                </div>
+                
+                <button type="submit" class="signup-button">Create Account</button>
+            </form>
+            
+            <div class="login-link">
+                Already have an account? <a href="login.html">Sign in</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/navbar.js"></script>
+    <!-- Add this before the closing body tag -->
+    <!-- Footer -->
+    <footer class="py-8 px-4 footer-gradient">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Velo Rapido</h3>
+                <p>Premium bike and scooter rentals for the modern explorer.</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Contact</h3>
+                <p>123 Bike Lane, Cityville</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@velorapido.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="mr-4">Facebook</a>
+                    <a href="#" class="mr-4">Instagram</a>
+                    <a href="#" class="mr-4">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 border-t border-gold pt-6">
+            <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,558 @@
+body {
+  background-color: black;
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300..700&display=swap');
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('https://drive.google.com/uc?export=download&id=1sqHRjp5meex86YyrdErlL39HfM3eoZdv') format('truetype');
+}
+
+.playfair-display {
+  margin: 100px;
+  font-family: 'CustomFont', serif;
+  color: white;
+  font-size: 90px;
+  max-width: 60vw;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #FFD700 0%, #FFB400 20%, #FFA500 40%, #FF8C00 60%, #FFA500 80%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+}
+
+/* Vehicle Animation */
+.vehicle {
+  max-height: 80vh;
+  max-width: 50vw;
+  position: absolute;
+  margin-top: -22vh;
+  top: 80vh;
+  left: 75vw;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .vehicle {
+    margin-left: -35vw;
+    transition: left 0.4s ease-in-out;
+  }
+  .playfair-display {
+    font-size: 60px;
+  }
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Fleet Showcase Styling - Enhanced to match design language */
+#fleet-preview {
+  background: linear-gradient(to bottom, #111111, #1a1a1a);
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#fleet-preview h2 {
+  /* Using the same gradient text style as other headings */
+  background: linear-gradient(to right, #FFD700 0%, #FFB400 20%, #FFA500 40%, #FF8C00 60%, #FFA500 80%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+}
+
+.fleet-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none;
+  gap: 2rem;
+}
+
+.fleet-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.fleet-item {
+  min-width: 300px;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.fleet-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.fleet-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.fleet-item h3 {
+  color: #FFD700;
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+
+.fleet-item .vehicle-type {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.fleet-item .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.fleet-item .price span {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.view-all-btn {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  margin-top: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.view-all-btn:hover {
+  background-color: #FFC000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+button {
+  background-color: rgba(255, 196, 0, 0.8);
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: #ffd903;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 217, 3, 0.2);
+}
+
+/* Service Cards */
+.service-card {
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #FFD700;
+}
+
+.service-card p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.service-btn {
+  background: linear-gradient(to right, rgba(255, 215, 0, 0.1) 1%, transparent 40%, transparent 60%, rgba(255, 215, 0, 0.1) 100%);
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Footer Styling - Enhanced to match design language */
+.footer-gradient {
+  background: linear-gradient(to bottom, #111111, #1a1a1a);
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.text-gold {
+  color: #FFD700;
+}
+
+footer h3 {
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+footer a:hover {
+  color: #FFD700;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer p {
+  color: #ccc;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+}
+
+.social-icons a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.social-icons a:hover:after {
+  width: 100%;
+}
+
+.border-gold {
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Animations */
+@keyframes vehicleAnimation {
+  0% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { opacity: 0 }
+}
+
+/* Fix hero section styling */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Simplified typing animation styles */
+.typing-container {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+  height: 4rem;
+  font-family: 'CustomFont', serif;
+  display: flex;
+  align-items: center;
+}
+
+#typing-text {
+  min-height: 4rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 50px;
+  background-color: #FFD700;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Enhanced Book Now button - made longer */
+.book-now-btn {
+  display: block;
+  width: 200px;  /* Increased from 150px to 200px */
+  height: 80px;  /* Reduced height to make it more rectangular */
+  background-color: #FFD700;
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80px; /* Center text vertically */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 2rem;
+}
+
+.book-now-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.book-now-btn:hover:before {
+  left: 100%;
+}
+
+.book-now-btn:hover {
+  background-color: #FFC000;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.book-now-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Hero section styling */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+}
+
+/* Typing animation styles - fixed */
+/* Clean up the duplicate typing container styles and fix the animation */
+.typing-container {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+  height: 4rem;
+  font-family: 'CustomFont', serif;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 50px;
+  background-color: #FFD700;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+  vertical-align: middle;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.book-now-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.learn-more-btn {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  color: #FFD700;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+  padding: 2rem 1rem;
+  text-decoration: none;
+  border: 2px solid #FFD700;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Background particles */
+.gold-particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(255,215,0,0) 70%);
+  border-radius: 50%;
+  animation: float 15s infinite ease-in-out;
+  z-index: 1;
+}
+
+/* Keep the existing particle styling but reduce opacity */
+.gold-particle:nth-child(1) {
+  opacity: 0.5;
+}
+
+.gold-particle:nth-child(2) {
+  opacity: 0.5;
+}
+
+.gold-particle:nth-child(3) {
+  opacity: 0.5;
+}
+
+.gold-particle:nth-child(4) {
+  opacity: 0.5;
+}
+
+.gold-particle:nth-child(5) {
+  opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .book-now-btn, .learn-more-btn {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+  
+  .hero-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

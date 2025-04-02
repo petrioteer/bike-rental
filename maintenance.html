@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/maintenance.css">
+    <title>Maintenance Services - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="maintenance-hero">
+        <div class="hero-content">
+            <h1 class="text-4xl font-bold gradient-text">Professional Bike Maintenance</h1>
+            <p class="text-xl mt-4">Keep your ride in perfect condition with our expert maintenance services</p>
+            <a href="#services" class="hero-btn">View Services</a>
+        </div>
+    </div>
+
+    <div class="maintenance-container">
+        <section id="services" class="maintenance-services">
+            <h2 class="section-title">Our Maintenance Services</h2>
+            <p class="section-description">We offer a comprehensive range of maintenance services to keep your bike or scooter running smoothly and safely.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/icons/basic-tune.png" alt="Basic Tune-Up">
+                    </div>
+                    <h3 class="service-title">Basic Tune-Up</h3>
+                    <p class="service-description">A quick check and adjustment of your bike's essential components to ensure optimal performance.</p>
+                    <ul class="service-features">
+                        <li>Brake adjustment</li>
+                        <li>Gear adjustment</li>
+                        <li>Tire pressure check</li>
+                        <li>Chain lubrication</li>
+                        <li>Safety inspection</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-value">$39.99</span>
+                        <a href="#booking" class="service-btn">Book Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/icons/standard-service.png" alt="Standard Service">
+                    </div>
+                    <h3 class="service-title">Standard Service</h3>
+                    <p class="service-description">A comprehensive service to keep your bike running smoothly and prevent future issues.</p>
+                    <ul class="service-features">
+                        <li>All Basic Tune-Up services</li>
+                        <li>Wheel truing</li>
+                        <li>Headset adjustment</li>
+                        <li>Bottom bracket check</li>
+                        <li>Drivetrain cleaning</li>
+                        <li>Cable & housing inspection</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-value">$79.99</span>
+                        <a href="#booking" class="service-btn">Book Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/icons/premium-service.png" alt="Premium Service">
+                    </div>
+                    <h3 class="service-title">Premium Service</h3>
+                    <p class="service-description">A complete overhaul of your bike to ensure peak performance and longevity.</p>
+                    <ul class="service-features">
+                        <li>All Standard Service items</li>
+                        <li>Complete disassembly</li>
+                        <li>Frame cleaning & polishing</li>
+                        <li>Bearing replacement/service</li>
+                        <li>Brake bleeding (hydraulic)</li>
+                        <li>Suspension service</li>
+                        <li>Detailed safety inspection</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-value">$149.99</span>
+                        <a href="#booking" class="service-btn">Book Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/icons/wheel-service.png" alt="Wheel Building & Repair">
+                    </div>
+                    <h3 class="service-title">Wheel Building & Repair</h3>
+                    <p class="service-description">Expert wheel building, truing, and repair services for all types of bikes.</p>
+                    <ul class="service-features">
+                        <li>Wheel truing</li>
+                        <li>Spoke replacement</li>
+                        <li>Hub servicing</li>
+                        <li>Custom wheel building</li>
+                        <li>Tubeless setup</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-value">From $29.99</span>
+                        <a href="#booking" class="service-btn">Book Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/icons/electric-service.png" alt="E-Bike Service">
+                    </div>
+                    <h3 class="service-title">E-Bike Service</h3>
+                    <p class="service-description">Specialized maintenance for electric bikes to keep them running efficiently.</p>
+                    <ul class="service-features">
+                        <li>Battery health check</li>
+                        <li>Motor diagnostics</li>
+                        <li>Electronic system updates</li>
+                        <li>Standard mechanical service</li>
+                        <li>Range optimization</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-value">$99.99</span>
+                        <a href="#booking" class="service-btn">Book Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/icons/custom-service.png" alt="Custom Builds">
+                    </div>
+                    <h3 class="service-title">Custom Builds</h3>
+                    <p class="service-description">Build your dream bike with our expert technicians using premium components.</p>
+                    <ul class="service-features">
+                        <li>Frame & component selection</li>
+                        <li>Custom fitting</li>
+                        <li>Professional assembly</li>
+                        <li>Performance tuning</li>
+                        <li>Ongoing support</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-value">Custom Quote</span>
+                        <a href="#booking" class="service-btn">Inquire</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="maintenance-process">
+            <h2 class="section-title">Our Service Process</h2>
+            <p class="section-description">We follow a thorough process to ensure your bike receives the best care possible.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Initial Assessment</h3>
+                    <p class="step-description">We thoroughly inspect your bike to identify any issues and determine the best service approach.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Service Quote</h3>
+                    <p class="step-description">We provide a detailed quote for the recommended services, with no hidden costs.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Expert Service</h3>
+                    <p class="step-description">Our certified technicians perform the agreed services using professional tools and quality parts.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Quality Check</h3>
+                    <p class="step-description">We thoroughly test your bike to ensure all systems are functioning perfectly.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Ready to Ride</h3>
+                    <p class="step-description">Your bike is ready for pickup, along with maintenance tips to keep it running smoothly.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="booking" class="maintenance-booking">
+            <h2 class="section-title">Book Your Service</h2>
+            <p class="section-description">Schedule a service appointment at your convenience.</p>
+            
+            <form class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-type">Service Type</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">Select a service</option>
+                            <option value="basic-tune-up">Basic Tune-Up</option>
+                            <option value="standard-service">Standard Service</option>
+                            <option value="premium-service">Premium Service</option>
+                            <option value="wheel-service">Wheel Building & Repair</option>
+                            <option value="e-bike-service">E-Bike Service</option>
+                            <option value="custom-build">Custom Build</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bike-type">Bike Type</label>
+                        <select id="bike-type" name="bike-type" required>
+                            <option value="">Select bike type</option>
+                            <option value="road">Road Bike</option>
+                            <option value="mountain">Mountain Bike</option>
+                            <option value="hybrid">Hybrid/City Bike</option>
+                            <option value="electric">Electric Bike</option>
+                            <option value="scooter">Scooter</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Date</label>
+                        <input type="date" id="preferred-date" name="preferred-date" required>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Please provide any specific issues or requests..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="booking-btn">Schedule Service</button>
+                </div>
+            </form>
+        </section>
+        
+        <section class="maintenance-faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How often should I service my bike?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For regular riders, we recommend a basic tune-up every 3-4 months and a standard service annually. If you ride frequently or in challenging conditions, more frequent servicing may be necessary. E-bikes typically require service every 500-1000 miles.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How long does a service typically take?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A basic tune-up usually takes 1-2 hours, while a standard service takes 24-48 hours. Premium services and custom builds may take 3-5 days depending on the complexity and parts availability. We'll provide a specific timeframe when you drop off your bike.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you provide warranty on your services?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all our services come with a 30-day satisfaction guarantee. If any issues arise related to our service within this period, we'll fix them at no additional cost. Parts replaced during service carry the manufacturer's warranty.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I bring my own parts for installation?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we can install customer-supplied parts. However, please note that we cannot provide warranty on these parts. We recommend using our quality parts for optimal performance and warranty coverage.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer pickup and delivery services?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer pickup and delivery within a 10-mile radius of our shop for a small additional fee. This service is complimentary for premium service packages. Please inquire about availability when booking your service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="py-8 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl mb-4">Velo Rapido</h3>
+                <p>Premium bike and scooter rentals for the modern explorer.</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Contact</h3>
+                <p>123 Bike Lane, Cityville</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@velorapido.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="mr-4">Facebook</a>
+                    <a href="#" class="mr-4">Instagram</a>
+                    <a href="#" class="mr-4">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/navbar.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.textContent = '+';
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>

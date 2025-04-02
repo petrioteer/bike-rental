@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Velo Rapido - Premium Bike Rental</title>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">VELO RAPIDO</a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="book.html">BOOK NOW</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="fleet.html">OUR FLEET</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <!-- Background animation elements -->
+        <div class="background-effects">
+            <div class="gold-particle"></div>
+            <div class="gold-particle"></div>
+            <div class="gold-particle"></div>
+            <div class="gold-particle"></div>
+            <div class="gold-particle"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="typing-container">
+                <span id="typing-text"></span><span class="cursor"></span>
+            </div>
+            
+            <p class="hero-text">Experience premium mobility in style with our luxury bike and scooter rentals.</p>
+            
+            <a href="book.html" class="book-now-btn">Book Now</a>
+        </div>
+        
+        <img class="vehicle" id="scoot" src="./assets/scoot-front.png" alt="Electric Scooter">
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4">
+        <h2 class="text-4xl text-center mb-12 gradient-text">Our Premium Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="service-card">
+                <div class="icon-container">
+                    <img src="./assets/icons/bike.png" alt="Bike Rental">
+                </div>
+                <h3>Bike Rental</h3>
+                <p>Choose from our premium fleet of bikes and scooters for hourly, daily, or weekly rentals.</p>
+                <a href="book.html" class="service-btn">Book Now</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="icon-container">
+                    <img src="./assets/icons/calendar.png" alt="Schedule">
+                </div>
+                <h3>Schedule Rides</h3>
+                <p>Plan ahead and schedule your rides for special events or regular commutes.</p>
+                <a href="schedule.html" class="service-btn">Schedule</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="icon-container">
+                    <img src="./assets/icons/maintenance.png" alt="Maintenance">
+                </div>
+                <h3>Maintenance</h3>
+                <p>Professional maintenance services for your personal bikes and scooters.</p>
+                <a href="maintenance.html" class="service-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Showcase -->
+    <section id="fleet-preview" class="py-16 px-4 bg-gray-900">
+        <h2 class="text-4xl text-center mb-12 gradient-text">Our Premium Fleet</h2>
+        <div class="fleet-carousel max-w-6xl mx-auto">
+            <!-- Fleet items will be dynamically loaded here -->
+        </div>
+        <div class="text-center mt-8">
+            <a href="fleet.html" class="view-all-btn">View All Vehicles</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl text-center mb-8 gradient-text">About Velo Rapido</h2>
+            <p class="text-lg mb-6">
+                Velo Rapido offers premium bike and scooter rentals for urban explorers and adventure seekers. 
+                Our mission is to provide eco-friendly transportation options that are both stylish and efficient.
+            </p>
+            <p class="text-lg mb-6">
+                Founded in 2023, we've quickly become the go-to choice for quality rentals in the city. 
+                Our fleet is regularly maintained and includes the latest models of electric bikes and scooters.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 footer-gradient">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Velo Rapido</h3>
+                <p>Premium bike and scooter rentals for the modern explorer.</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Contact</h3>
+                <p>123 Bike Lane, Cityville</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@velorapido.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4 text-gold font-bold">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="mr-4">Facebook</a>
+                    <a href="#" class="mr-4">Instagram</a>
+                    <a href="#" class="mr-4">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 border-t border-gold pt-6">
+            <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add the new typing animation script before the closing body tag -->
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/vehicleParallax.js"></script>
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/fleet-preview.js"></script>
+    <script src="./scripts/typing-animation.js"></script>
+</body>
+</html>

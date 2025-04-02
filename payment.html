@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/payment.css">
+    <title>Payment - Velo Rapido</title>
+</head>
+<body class="bg-black text-white">
+    <div class="navbar">
+        <div class="menu-toggler" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-overlay" id="navOverlay">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="book.html">Book Now</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="login.html">Login/Signup</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-container">
+        <div class="payment-header">
+            <h1 class="text-4xl font-bold gradient-text">Complete Your Booking</h1>
+            <p class="text-gray-300 mt-2">Secure payment for your rental</p>
+        </div>
+
+        <div class="payment-content">
+            <div class="booking-summary">
+                <h2 class="summary-title">Booking Summary</h2>
+                
+                <div class="summary-details">
+                    <div class="summary-item">
+                        <span class="item-label">Vehicle</span>
+                        <span class="item-value" id="vehicle-name">Trek FX 3 City Bike</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="item-label">Date & Time</span>
+                        <span class="item-value" id="booking-datetime">June 15, 2023 • 10:00 AM - 2:00 PM</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="item-label">Duration</span>
+                        <span class="item-value" id="booking-duration">4 hours</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="item-label">Pickup</span>
+                        <span class="item-value" id="pickup-location">Central Park, New York</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="item-label">Dropoff</span>
+                        <span class="item-value" id="dropoff-location">Brooklyn Bridge, New York</span>
+                    </div>
+                    
+                    <div class="summary-item" id="extras-container">
+                        <span class="item-label">Extras</span>
+                        <div class="extras-list">
+                            <div class="extra-item">Helmet (+$5.00)</div>
+                            <div class="extra-item">Security Lock (+$3.00)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="price-breakdown">
+                    <div class="price-item">
+                        <span>Base Rate (4 hours)</span>
+                        <span id="base-rate">$32.00</span>
+                    </div>
+                    
+                    <div class="price-item">
+                        <span>Extras</span>
+                        <span id="extras-cost">$8.00</span>
+                    </div>
+                    
+                    <div class="price-item">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$40.00</span>
+                    </div>
+                    
+                    <div class="price-item">
+                        <span>Tax (8%)</span>
+                        <span id="tax">$3.20</span>
+                    </div>
+                    
+                    <div class="price-item total">
+                        <span>Total</span>
+                        <span id="total-amount">$43.20</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-form">
+                <h2 class="form-title">Payment Details</h2>
+                
+                <form id="paymentForm">
+                    <div class="payment-methods">
+                        <div class="method-option">
+                            <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                            <label for="credit-card">Credit Card</label>
+                        </div>
+                        
+                        <div class="method-option">
+                            <input type="radio" id="paypal" name="payment-method" value="paypal">
+                            <label for="paypal">PayPal</label>
+                        </div>
+                    </div>
+                    
+                    <div id="credit-card-form">
+                        <div class="form-group">
+                            <label for="card-holder">Cardholder Name</label>
+                            <input type="text" id="card-holder" name="card-holder" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry-date">Expiry Date</label>
+                                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="paypal-form" class="hidden">
+                        <p class="paypal-info">You will be redirected to PayPal to complete your payment.</p>
+                    </div>
+                    
+                    <div class="billing-address">
+                        <h3 class="address-title">Billing Address</h3>
+                        
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" name="state" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" name="zip" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" name="country" required>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-conditions">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the <a href="#" class="terms-link">Terms & Conditions</a> and <a href="#" class="terms-link">Rental Policy</a></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="back-btn" onclick="window.history.back()">Back</button>
+                        <button type="submit" class="pay-btn">Pay $43.20</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-8 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl mb-4">Velo Rapido</h3>
+                <p>Premium bike and scooter rentals for the modern explorer.</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Contact</h3>
+                <p>123 Bike Lane, Cityville</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@velorapido.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl mb-4">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="mr-4">Facebook</a>
+                    <a href="#" class="mr-4">Instagram</a>
+                    <a href="#" class="mr-4">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2023 Velo Rapido. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/payment.js"></script>
+</body>
+</html>

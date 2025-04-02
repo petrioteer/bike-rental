@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300..700&display=swap');
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu-toggler {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.line {
+    width: 2.03vw;
+    height: 0.3vh;
+    background-color: #ffffff;
+    margin: 0.7vh;
+    transition: transform 0.19s ease-in-out;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(221, 199, 55, 0.5); /* Adjust opacity as needed */
+    backdrop-filter: blur(8px);
+    font-family: "Major Mono Display", monospace;
+    font-style: normal;
+    overflow: hidden;
+    transition: width 0.5s ease, clip-path 0.5s ease; /* Smooth transition for width and clip-path */
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+    z-index: 900;
+}
+
+.nav-overlay.open {
+    width: 30vw; /* Limit width to 30% of viewport width */
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%); /* Adjust the clip-path to create an arc effect */
+}
+
+
+.nav-links {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    color: #f8f5f5;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1; /* Ensure it's above the overlay */
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin: 10px 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: inherit; /* Inherit text color from parent */
+}
+
+.open .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-2px, 4px);
+}
+
+.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.open .line:nth-child(3) {
+    transform: rotate(45deg) translate(-2px, -4px);
+}
+
+
+/* Reset previous navbar styles */
+.navbar, .menu-toggler, .nav-overlay {
+    display: none;
+}
+
+/* New navbar styles */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(157, 142, 45, 0.3);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    position: static;
+    transform: none;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Increase spacing between navigation links */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem; /* Add gap property for consistent spacing */
+}
+
+.nav-links li {
+    margin: 0; /* Reset margin since we're using gap */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Ensure consistent gold color */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #FFD700;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Fix active link style */
+.nav-links a.active {
+    color: #FFD700;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Fix login/signup buttons */
+.login-btn, .signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.login-btn {
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    background-color: transparent;
+}
+
+.signup-btn {
+    color: black;
+    background-color: #FFD700;
+    border: 1px solid #FFD700;
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.signup-btn:hover {
+    background-color: #FFC000;
+}
+
+/* Active link style */
+.nav-links a.active {
+    color: #FFD700;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn span {
+    background-color: #FFD700;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .nav-links li {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .nav-links {
+        margin: 1rem 0;
+    }
+    
+    .nav-links ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem;
+    }
+    
+    .auth-buttons {
+        margin-top: 1rem;
+    }
+}
+
+
+/* Add these styles to the end of your navbar.css file */
+
+/* Scrolled navbar style */
+.main-nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Active link style */
+.nav-links a.active {
+    color: #FFD700;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #9d8e2d;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-links.mobile {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    .nav-links.mobile.active {
+        max-height: 300px;
+    }
+    
+    .nav-links.mobile ul {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .auth-buttons.mobile {
+        position: absolute;
+        top: calc(100% + 200px);
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    .auth-buttons.mobile.active {
+        max-height: 100px;
+        padding: 1rem;
+    }
+}
